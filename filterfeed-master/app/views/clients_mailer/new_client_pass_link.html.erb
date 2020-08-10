@@ -1,0 +1,74 @@
+<style>
+  @media screen and (max-width: 580px) {
+    .imgLogo {
+      width: 110px;
+      height: 110px;
+    }
+
+    .imageBorderTopo {
+      padding-bottom: 10px !important;
+    }
+  }
+</style>
+
+<body style='background-color:#fafafa;'>
+  <table width='100%' align='center' valign='top' cellspacing='0' cellpadding='0' border='0' style='font-family: Arial;max-width: 640px;background-color:#FFFFFF;padding:20px;'>
+    <thead>
+      <tr>
+        <td align='center'>
+          <a href='http://filterfeed.com.br/' target='_blank' rel='noopener'>
+            <img src='https://gallery.mailchimp.com/b196bbacf4360b88d67e82a12/images/7ed5b143-7a4a-43d7-a366-e24be11fff4e.png' alt='A opinião de quem decide' width='100' height='73' border='0' class='imgLogo' />
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class='imageBorderTopo' style='width:100%;height:77px;background-image:url(https://gallery.mailchimp.com/b196bbacf4360b88d67e82a12/images/0c88abe6-54dd-4519-a162-5f35a787d64d.png);background-repeat: no-repeat;background-color:transparent;background-size:100%;padding-bottom:30px'>
+          </div>
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td align='center' style='padding-bottom: 8px;'>
+          Sue Dashboard foi bloqueado após duas tentativas de acesso mal sucedidas.<br />Para redefinir sua insígnia de acesso siga o link a seguir:
+        </td>
+      </tr>
+      <tr>
+        <td align='center' style='padding-bottom: 40px;'>
+          <%= link_to nil, dashboard_authentication_failed_url(id: @url, protocol: :https) %>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td style='width:100%;height:93px;background-image:url(https://gallery.mailchimp.com/b196bbacf4360b88d67e82a12/images/b97f84f4-639f-42d8-be2f-d33fc875866d.png);background-repeat: no-repeat;background-color:transparent;background-size:100% 100px;border: none'>
+        </td>
+      </tr>
+      <tr style='background-color:#272727;'>
+        <td>
+          <table align='center' style='background-color:#272727;text-decoration:none;color:#FFF;padding-bottom:20px' border='0' cellpadding='0'>
+            <tr align='center'>
+              <td>
+                <a href='http://filterfeed.com.br/' target='_blank' rel='noopener' style='text-decoration:none;color:#FFF'>
+                  <img src='https://gallery.mailchimp.com/b196bbacf4360b88d67e82a12/images/30fef9c3-4d03-4482-a052-1e549dffc190.jpg' alt='Logo Filterfeed' width='55' height='55' border='0' />
+                  <p style='margin:2px;font-size: 14px'>www.filterfeed.com.br</p>
+                </a>
+              </td>
+            </tr>
+            <tr align='center'>
+              <td>
+                <p style='margin:2px;line-height: 16px;font-size: 10px'>
+                  S/CLN 206 Bloco A Loja 06, Asa Norte, Brasília.<br>
+                  Google Startups Campus, R. Cel. Oscar Porto, 70, São Paulo.<br>
+                  Todas as atividades na nuvem.<br>
+                  © 2019 Filterfeed
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</body>

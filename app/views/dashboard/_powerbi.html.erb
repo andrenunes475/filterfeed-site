@@ -1,0 +1,12 @@
+<main class="dashboard">
+  <nav class="dashboard-navbar">
+    <%= link_to '', root_path, class: 'dashboard-logo' %>
+    <%= link_to 'dashboard', dashboard_path %>
+  </nav>
+  <div class="dashboard-powerbi">
+    <iframe src="https://app.powerbi.com/view?r=<%= product %>" frameborder="0" allowFullScreen="true"></iframe>
+  </div>
+  <footer class="dashboard-footer">
+    &copy; 2019 Filterfeed Inc. All Rights Reserved
+  </footer>
+</main>

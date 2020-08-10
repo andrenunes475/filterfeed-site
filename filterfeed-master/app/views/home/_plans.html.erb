@@ -1,0 +1,21 @@
+<div class="section-plans">
+  <a class="anchor" id="planos"></a>
+  <div class='h-66 inherit'>
+    <div>
+      <h1> Planos </h1>
+      <hr>
+    </div>
+
+    <div class="plans-subtitle">
+      <b>-</b><span> MONTE SUA OPERAÇÃO </span><b>-</b>
+    </div>
+
+    <div class="plans-container">
+      <% if plans.present? %>
+        <% plans.each do |plan|  %>
+          <%= link_to plan.content, "javascript:;", class: "plan-link link-unchecked"%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

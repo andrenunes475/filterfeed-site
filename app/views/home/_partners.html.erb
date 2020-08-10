@@ -1,0 +1,23 @@
+<div class="divisoria"></div>
+<section class="section-partners">
+  <a class="anchor" id="parceiros"></a>
+
+  <div class="center-box">
+    <h1 class="section-title" style="border-bottom: 3px solid #5e1cac;">PARC</h1>
+    <h1 class="section-title">EIROS</h1>
+  </div>
+
+  <div class="center-box">
+    <div class="partners-container">
+      <% if @partners.present? %>
+        <% @partners.each do |partner|%>
+          <% if partner.avatar.attached?%>
+            <div class="partners-box">
+              <%= image_tag  partner.avatar.variant(resize: "250x100"), class:"redimension-img" %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</section>

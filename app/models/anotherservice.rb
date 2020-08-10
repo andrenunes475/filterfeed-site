@@ -1,0 +1,2 @@
+class Anotherservice < ApplicationRecord
+end

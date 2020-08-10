@@ -1,0 +1,199 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_self
+ */
+
+ @import 'bootstrap';
+ @import 'font-awesome-sprockets';
+ @import 'font-awesome';
+ @import 'jasny-bootstrap.min';
+ @import 'contacts';
+ @import 'plans';
+ @import 'backoffice/backoffice';
+ @import 'dashboard';
+ @import 'welcome';
+ @import 'responsive';
+
+@font-face {
+  font-family: 'Floki';
+  src: font-url('fonts/floki.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#workffs,
+#workffs:active {
+  background-color: #6b3bc6 !important;
+  border-color: #6b3bc6 !important;
+  color: #ffffff !important;
+}
+
+#workffs:hover,
+#workffs:focus,
+#workffs.focus,
+#workffs.active {
+  color: #ffffff !important;
+  background-color: #4b298c !important;
+  border-color: #4b298c !important;
+}
+
+#font-125-rem {
+  font-size: 1.25rem;
+  text-align: center !important;
+}
+
+#font-175-rem {
+  font-size: 1.75rem;
+  text-align: center !important;
+}
+
+#color-link:hover {
+  color: #461580 !important;
+}
+
+.form-control {
+  padding: 12px;
+  height: auto;
+}
+
+.cid-qTkA127IK8 {
+  background-color: rgba($color: #fff, $alpha: 0.88) !important;
+}
+
+#center-text {
+  text-align: center !important;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
+  top: 0;
+  z-index: -2;
+}
+
+.contato {
+  background-image: image-url('pagina_site.png');
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: bottom;
+  height: 100vh;
+  width: 100vw;
+}
+
+.custom-border {
+  border-bottom-left-radius: 0.25rem !important;
+  border-top-left-radius: 0.25rem !important;
+}
+
+.custom-close-button {
+  color: #b20000;
+}
+
+.custom-close-button:hover {
+  background-color: #b20000;
+  color: #e9ecef;
+  text-decoration: none;
+}
+
+// .alert {
+//   position: absolute;
+//   top: 0;
+//   width: 100vw;
+//   z-index: 99;
+// }
+
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+body{
+  min-height: 100%;
+  max-width: 100vw;
+}
+
+.security {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.security-title {
+  margin: 0.25rem;
+  color: #521996;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.security-subtitle {
+  color: #555;
+  font-size: 1rem;
+  text-align: justify;
+  text-align-last: left;
+}
+
+.security table {
+  border-spacing: 0.5rem;
+  border-collapse: separate;
+  text-align: center;
+}
+
+.security-td {
+  font-family: 'Floki';
+  width: 6rem;
+  height: 6rem;
+}
+
+.security-button {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0.6rem 0.15rem;
+  border: 0;
+  border-radius: 3rem;
+  text-align: center;
+  background-image: linear-gradient(to right top, #461580, #914de2);
+  color: white;
+  font-size: 3rem;
+}
+
+.security-button:hover {
+  background-color: #521996;
+  color: #efefef;
+  background-image: none;
+}
+
+.cobertura {
+  width: calc(100vw - var(--scrollbar-width));
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#cobertura {
+  top: -4rem;
+}
+
+#cobertura-powerbi iframe {
+  width: 100%;
+  height: 100%;
+}

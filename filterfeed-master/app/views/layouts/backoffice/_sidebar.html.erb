@@ -1,0 +1,70 @@
+<ul class='sidebar navbar-nav'>
+  <li class='nav-item <%= active?(backoffice_graphs_path) %>'>
+    <%= link_to(backoffice_graphs_path, class: 'nav-link') do %>
+      <i class='far fa-fw fa-window-maximize'></i>
+      <span>Landing Page</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_services_path) %>'>
+    <%= link_to(backoffice_services_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-project-diagram'></i>
+      <span>Produtos</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_welcomes_path) %>'>
+    <%= link_to(backoffice_welcomes_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-align-justify'></i>
+      <span>Texto (Produtos)</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_partners_path) %>'>
+    <%= link_to(backoffice_partners_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-handshake'></i>
+      <span>Parceiros</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_members_path) %>'>
+    <%= link_to(backoffice_members_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-users'></i>
+      <span>Equipe</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_another_services_path) %>'>
+    <%= link_to(backoffice_another_services_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-align-justify'></i>
+      <span>Texto (Equipe)</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_addresses_path) %>'>
+    <%= link_to(backoffice_addresses_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-map-marked-alt'></i>
+      <span>Endereços</span>
+    <% end %>
+  </li>
+  <li class='nav-item <%= active?(backoffice_contact_infos_path) %>'>
+    <%= link_to(backoffice_contact_infos_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-phone'></i>
+      <span>Contato</span>
+    <% end %>
+  </li>
+  <!-- <li class='nav-item <%= active?(backoffice_plans_path) %>'>
+    <%= link_to(backoffice_plans_path, class: 'nav-link') do %>
+      <i class='fas fa-fw fa-clipboard-list'></i>
+      <span>Planos</span>
+    <% end %>
+  </li> -->
+  <% if current_user.admin %>
+    <li class='nav-item <%= active?(backoffice_users_path) %>'>
+      <%= link_to(backoffice_users_path, class: 'nav-link') do %>
+        <i class='fas fa-fw fa-user'></i>
+        <span>Gerentes</span>
+      <% end %>
+    </li>
+    <li class='nav-item <%= active?(backoffice_clients_path) %>'>
+      <%= link_to(backoffice_clients_path, class: 'nav-link') do %>
+        <i class='fas fa-fw fa-hand-holding-usd'></i>
+        <span>Clientes</span>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

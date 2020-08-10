@@ -1,0 +1,190 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.section-contact {
+    background-image: image-url("Projeto_Site_WHITE_PC_teste_22.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 4.5em 4.5em 2em 4.5em;
+    padding-top: 3em;
+    color: #402c63;
+    font-family: 'Montserrat', sans-serif;
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+        color: #4b3475;
+        margin-bottom: 0;
+    }
+
+    hr {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 3em;
+        width: 6em;
+        border-top: 3px solid #624498;
+        left: 3em;
+    }
+
+    .contact-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        height: 60vh;
+        margin-bottom: 5rem;
+
+        .contact-info {
+            width: 35%;
+            display: flex;
+            align-self: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .address {
+                .text-address {
+                    margin-bottom: 0;
+                }
+                .bold-address {
+                    font-weight: 700;
+                }
+                margin-bottom: 9em;
+            }
+            .phone-email {
+                width: 100%;
+                display: flex;
+
+                .phone-icon {
+                    font-size: 2em;
+                    align-self: center;
+                }
+
+                .vertical-line {
+                    width: 0;
+                    height: 4em;
+                    border: 0.7px solid #4b3475;
+                    align-self: center;
+                    margin: 0 0.5em;
+                }
+
+                b {
+                    font-size: 1.1em;
+                }
+                .email {
+                    font-size: 1em;
+                }
+                .phone {
+                    font-size: 1.2em;
+                }
+            }
+        }
+
+        .form-container {
+            width: 55%;
+            display: flex;
+            align-self: flex-start;
+            justify-content: space-around;
+
+
+            .form-name, .form-email, .form-phone, .form-organization {
+                width: 49%;
+                box-sizing: border-box;
+                display: inline-block;
+            }
+
+            .field {
+                width: 100%;
+                border-radius: 0.15em;
+                border: 1px solid #796b91;
+            }
+            .label {
+                margin-bottom: 0;
+            }
+
+            .form-name, .form-email {
+                margin-bottom: 0.5em;
+            }
+
+
+            .form-message {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                margin-top: 1.5em;
+
+                .message-field {
+                    height: 12em;
+                    resize: none;
+                    overflow: auto;
+                    padding-bottom: 3em;
+                }
+
+                .plans-field {
+                    text-align: left;
+                    position: relative;
+                    bottom: calc(2.2em + 1px);
+                    height: 2.2em;
+                    padding: 0 0.2em;
+                    width: 100%;
+                    overflow-y: auto;
+                    background-color: #ffffff;
+                    margin: auto;
+                }
+            }
+
+            input[type=checkbox] {
+                display: none;
+            }
+
+            .plan-label {
+                display: none
+            }
+
+            input[type=checkbox]:checked + .plan-label {
+                border-radius: 0.8em;
+                background-color: #573c86;
+                color: #ffffff;
+                padding: 0.3em 0.6em;
+                font-size: 0.8em;
+                display: inline-block;
+                text-transform: lowercase;
+                margin-bottom: 0.2em;
+
+                span {
+                    position: relative;
+                    bottom: 0.4em;
+                    left: 0.1em;
+                }
+            }
+
+            .hidden {
+                visibility: hidden;
+            }
+
+            .send-button {
+                border-radius: 2em;
+                background-color: #624498;
+                padding: 0.3em 1em;
+                font-size: 1.25em;
+                text-transform: uppercase;
+                font-weight: 400;
+                color: #ffffff;
+                border: 0;
+                align-self: center;
+            }
+
+            .send-button:hover {
+                background-color: #442f6a;
+            }
+        }
+    }
+
+}
+
+.copyright {
+    text-align: center;
+    margin: auto;
+    width: 70vw;
+}

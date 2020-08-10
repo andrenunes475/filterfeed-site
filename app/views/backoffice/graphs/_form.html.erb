@@ -1,0 +1,33 @@
+<%= form_for @graph, url: url, method: method, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'} do |f| %>
+  <h3><%= text %></h3>
+  <div class='w-100'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:name, class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-align-justify"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:name, class: 'form-control', required: true, placeholder: 'Texto') %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:link, class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-link"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:link, class: 'form-control', required: false, placeholder: 'Link do Botão') %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:product, class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-link"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:product, class: 'form-control', required: true, placeholder: 'Link do Dashboard') %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit('Salvar', class: 'btn btn-success') %>
+    <%= link_to 'Voltar', backoffice_graphs_path, class: 'btn btn-info' %>
+  </div>
+<% end %>

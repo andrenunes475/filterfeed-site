@@ -1,0 +1,9 @@
+<%= form_for :encode, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'}, url: backoffice_dashboard_path, method: :post do |f| %>
+  <h3 class='mb-3'>Visualizar Dashboard</h3>
+  <div class='input-group mb-3'>
+    <%= f.text_field(:url, required: true, class: 'form-control', 'aria-describedby': 'submitButton') %>
+    <div class='input-group-append'>
+      <%= f.submit('Visualizar', class: 'btn btn-lg btn-success', id: 'submitButton') %>
+    </div>
+  </div>
+<% end %>

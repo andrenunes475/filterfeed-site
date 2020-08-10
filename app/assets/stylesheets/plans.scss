@@ -1,0 +1,102 @@
+.inherit {
+    display: inherit;
+    flex-direction: inherit;
+    align-items: inherit;
+    justify-content: inherit;
+}
+
+.h-66 {
+    height: 66%;
+}
+
+.section-plans {
+    //background-image: image-url('plans_background.png'), image-url('Projeto_Site_WHITE_PC_teste_22.jpg');
+    background-image: image-url('planosultima.jpg');
+    font-family: 'Montserrat', sans-serif;
+    width: calc(100vw - var(--scrollbar-width));
+    height: calc((100vw - var(--scrollbar-width)) * 0.821875);
+    padding: 4.5em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        text-transform: uppercase;
+        text-align: center;
+        color: #4b3475;
+        margin-bottom: 0;
+    }
+
+    hr {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 2em;
+        width: 4.5em;
+        border-top: 3px solid #624498;
+        left: 3em;
+    }
+
+    .plans-subtitle {
+        letter-spacing: 1px;
+        color: #623EAA;
+        font-size: 1.3em;
+        margin-top: 1.5em;
+
+        span {
+            margin: 0 0.5em;
+        }
+
+        b {
+            font-size: 2em;
+            font-weight: 900;
+            position: relative;
+            top: 0.1em;
+            color: #624498;
+        }
+    }
+
+    .plans-container {
+        text-align: center;
+        width: 45%;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 1em;
+
+        .plan-link {
+            color: #291b43;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-size: 1.2em;
+            margin-right: 1.1em;
+            margin-top: 0.3em;
+        }
+
+        .link-unchecked {
+            color: #291b43;
+            text-decoration: none;
+
+        }
+
+        .link-checked {
+            color: #9d71f6;
+            font-weight: 600;
+        }
+    }
+}
+
+.table-plans {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+
+    .table {
+        max-width: 40%;
+    }
+
+}

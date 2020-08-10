@@ -1,0 +1,48 @@
+<!-- DataTables Example -->
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-user "></i>
+      Gerentes Cadastrados
+    </div>
+    <%= link_to 'Novo Gerente', new_backoffice_user_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Tipo</th>
+            <th class='w-75'>Email</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.admin ? 'Admin' : 'Comum' %></td>
+              <td><%= user.email %></td>
+              <td align="center"><%= link_to edit_backoffice_user_path(user), class: 'btn btn-sm' do %>
+                <i class="fas fa-lg fa-fw fa-edit"></i>
+              <% end %></td>
+              <td align="center">
+                <% if current_user == user %>
+                  <span class='btn btn-sm disabled'>
+                    <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+                  </span>
+                <% else %>
+                  <%= link_to backoffice_user_path(user), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir gerente?"} do %>
+                    <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

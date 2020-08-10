@@ -1,0 +1,242 @@
+// Para celular (mais apropriado) e tablet
+@media only screen and (max-width: 1024px) {
+
+    .divisoria {
+        height: 26.1vh;
+        margin-top: 0.5rem;
+    }
+
+    //Navbar
+
+    .header-navbar {
+        width: 100vw;
+        padding: 0 1em;
+
+        .horizontal-list {
+            padding: 0;
+            margin: 0;
+
+            .logo-redimension {
+                height: 2em;
+                margin: 0;
+            }
+
+            li {
+                font-size: 1em;
+
+                a {
+                    font-size: 1em;
+                    margin: 0;
+                }
+            }
+
+            .desktop-link {
+                display: none;
+            }
+
+            .dropdown {
+                display: block;
+                z-index: 1;
+
+                .fa-bars {
+                    font-size: 1.5em;
+                    margin-top: 0.15em;
+                }
+
+                .fa-bars:hover {
+                    color: #4b377b;
+                }
+
+                .dropdown-menu {
+                    z-index: 999;
+                }
+            }
+
+        }
+
+    }
+
+    //Página de Welcome
+
+    #page0 {
+        background-size: cover;
+        height: 100vh;
+        width: calc(100vw - var(--scrollbar-width));
+    }
+
+    .page-container {
+        margin: 0;
+        z-index: 99;
+    }
+
+    .greetings-textbox {
+        position: relative;
+        top: 3em;
+        font-size: 1.5em;
+        width: 80vw;
+        text-align: left;
+        margin-left: 0;
+        z-index: -2;
+    }
+
+
+    //Seção de planos
+    #page2 {
+        top: -6em;
+    }
+
+    .section-plans {
+        background-size: cover;
+        background-position: center;
+        padding: 0;
+        height: 131.5vh;
+
+        hr {
+            margin-bottom: 0;
+        }
+
+        .plans-subtitle {
+            margin-top: 1em;
+        }
+
+        .plans-container {
+            width: 90%;
+            overflow-y: auto;
+
+            .plan-link {
+                margin-right: 0.8em;
+            }
+        }
+
+    }
+
+
+    //Seção de parceiros
+    #page3 {
+        top: -3em;
+    }
+
+    .section-partners {
+
+        .section-title {
+            margin-top: 0.7em;
+        }
+
+        .partners-container {
+            width: 100%;
+            margin-top: 1.2em;
+            flex-direction: column;
+
+            .partners-box {
+                padding: 0;
+                margin: 0;
+                margin-bottom: 1.7em;
+            }
+        }
+    }
+
+    //Seção de contato
+
+    #page4 {
+        top: -2.5em;
+    }
+
+    .section-contact {
+        height: auto;
+        padding: 2em;
+
+        .contact-container {
+            height: auto;
+            flex-direction: column-reverse;
+            margin-bottom: 2em;
+
+            .contact-info {
+                width: 100%;
+
+                .address {
+                    margin-bottom: 1.5em;
+                }
+            }
+
+            .form-container {
+                width: 100%;
+
+                .hidden {
+                    height: 2em;
+                }
+            }
+        }
+
+        .copyright {
+            width: 90%;
+        }
+    }
+
+
+}
+
+//Adaptações específicas para tablet
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .header-navbar {
+        padding: 0.5em 2.5em;
+
+        .horizontal-list {
+
+            .logo-redimension {
+             height: 3em;
+            }
+
+            .dropdown {
+                .fa-bars {
+                    font-size: 2em;
+                    margin-top: 0.25em;
+                }
+            }
+        }
+    }
+
+    .greetings-textbox {
+        top: 1em;
+        font-size: 2.5em;
+    }
+
+    .plans-subtitle {
+        font-size: 1.5em;
+        margin-top: 0.7em;
+    }
+
+    .section-partners {
+
+        .partners-container {
+            width: 80%;
+            margin-top: 1.2em;
+            .partners-box {
+                padding: 0 1em;
+                margin-bottom: 1.7em;
+            }
+        }
+    }
+
+    .section-contact {
+        height: auto;
+        padding-top: 4em;
+
+        .contact-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            flex-direction: row;
+            height: auto;
+            margin-bottom: 2rem;
+
+            .contact-info {
+                width: 35%;
+            }
+            .form-container {
+                width: 55%;
+            }
+        }
+    }
+}

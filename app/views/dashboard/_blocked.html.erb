@@ -1,0 +1,19 @@
+<main class="dashboard">
+  <nav class="dashboard-navbar">
+    <%= link_to '', root_path, class: 'dashboard-logo' %>
+    <%= link_to 'dashboard' %>
+  </nav>
+  <div class="dashboard-powerbi">
+    <main class='security'>
+      <p class='security-title'>
+        Seu acesso foi bloqueado
+      </p>
+      <p class='security-subtitle'>
+        Isto pode ter acontecido porque alguém tentou acessar sua dashboard e errou a autenticação 2 ou mais vezes. Se este for o caso, você irá receber um email para redefinir sua insígnia e desbloquear sua dashboard. Se você não receber um email, entre em contato conosco através do email: <%= @email %>.
+      </p>
+    </main>
+  </div>
+  <footer class="dashboard-footer">
+    &copy; 2019 Filterfeed Inc. All Rights Reserved
+  </footer>
+</main>

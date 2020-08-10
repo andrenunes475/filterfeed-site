@@ -1,0 +1,17 @@
+<%= form_for @another_service, url: url, method: method, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'} do |f| %>
+  <h3><%= text %></h3>
+  <div class='w-100'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:text, id: 'text', class: 'input-group-text') do %>
+          <i class="fa fa-fw fa-align-justify"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:text, class: 'form-control', required: true, placeholder: 'Descrição', 'aria-describedby': 'text') %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit('Salvar', class: 'btn btn-success') %>
+    <%= link_to 'Voltar', backoffice_another_services_path, class: 'btn btn-info' %>
+  </div>
+<% end %>

@@ -1,0 +1,28 @@
+<div class='container'>
+  <div class='card card-login mx-auto mt-5'>
+    <div class='card-header'>
+      <h5 class='mb-0'>Insira sua nova senha</h5>
+    </div>
+    <div class='card-body'>
+      <div class='text-center mb-4'>
+        <% if @minimum_password_length %>
+          <p class='text-muted'>Mínimo de <%= @minimum_password_length %> caracteres.</p>
+        <% end %>
+      </div>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+        <div class='form-group'>
+          <%= f.password_field(:password, placeholder: 'Nova senha', autofocus: true, autocomplete: 'new-password', required: :true, class: 'form-control') %>
+        </div>
+        <div class='form-group'>
+          <%= f.password_field(:password_confirmation, placeholder: 'Confirme sua nova senha', autocomplete: 'off', required: :true, class: 'form-control') %>
+        </div>
+        <%= f.submit('Salvar', class: 'btn btn-primary btn-block') %>
+      <% end %>
+      <div class='text-center'>
+        <%= render 'devise/shared/links' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<%= form_for @user, url: url, method: method, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'} do |f| %>
+  <h3><%= text %></h3>
+  <div class='w-100'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:email, id: 'email', class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-at"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:email, class: 'form-control', pattern: '[\w\d.]+[@][\w\d]+[.][\w\d]+', required: true, placeholder: 'Email', 'aria-describedby': 'email') %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:password, id: 'password', class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-key"></i>
+        <% end %>
+      </div>
+      <%= f.password_field(:password, required: true, minlength: 6, class: 'form-control', placeholder: 'Senha', 'aria-describedby': 'password') %>
+    </div>
+    <div class="form-check">
+      <%= f.check_box(:admin, disabled: (current_user == @user), class: 'form-check-input') %>
+      <%= f.label(:admin, class: 'form-check-label') %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit('Salvar', class: 'btn btn-success') %>
+    <%= link_to 'Voltar', backoffice_users_path, class: 'btn btn-info' %>
+  </div>
+<% end %>

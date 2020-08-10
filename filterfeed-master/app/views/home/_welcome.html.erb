@@ -1,0 +1,32 @@
+<section class="page-body"  id="page0">
+  <div class="page-container">
+  <nav class='header-navbar'>
+    <ul class="horizontal-list">
+      <li style="float: left;">
+        <%= link_to root_path do%>
+          <%= image_tag  "filterfeed.png", class:"logo-redimension" %>
+        <% end %>
+      </li>
+      <li class="desktop-link" ><%= link_to  "contato", '#contato', class: "section-link" %></li>
+      <li class="desktop-link" ><%= link_to  "planos", "#planos", class: "section-link" %></li>
+      <li class="desktop-link" ><%= link_to  "parceiros", "#parceiros", class: "section-link" %></li>
+      <li class="desktop-link" ><%= link_to  "cobertura", "#cobertura", class: "section-link" %></li>
+      <li>
+        <div class="dropdown">
+          <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+            <%= link_to  "cobertura", "#cobertura", class: "dropdown-item dropdown-link" %>
+            <%= link_to  "parceiros", "#parceiros", class: "dropdown-item dropdown-link" %>
+            <%= link_to  "planos", "#planos", class: "dropdown-item dropdown-link" %>
+            <%= link_to  "contato", '#contato', class: "dropdown-item dropdown-link" %>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <div class="greetings-textbox">
+    <p><%= @welcome.present? ? @welcome.content : '' %></p>
+  </div>
+</section>

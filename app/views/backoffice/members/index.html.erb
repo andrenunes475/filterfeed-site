@@ -1,0 +1,41 @@
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-handshake "></i>
+      Equipe Cadastrada
+    </div>
+    <%= link_to 'Novo Membro', new_backoffice_member_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class='w-25'>Nome</th>
+            <th class='w-25'>Cargo</th>
+            <th class='w-25'>LinkedIn</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @members.each do |member| %>
+            <tr>
+              <td><%= member.id %></td>
+              <td><%= member.name %></td>
+              <td><%= member.role %></td>
+              <td><%= member.social %></td>
+              <td align="center"><%= link_to edit_backoffice_member_path(member), class: 'btn btn-sm' do %>
+                <i class="fas fa-lg fa-fw fa-edit"></i>
+              <% end %></td>
+              <td align="center"><%= link_to backoffice_member_path(member), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir o membro da equipe?"} do %>
+                <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+              <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

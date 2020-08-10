@@ -1,0 +1,72 @@
+// Place all the styles related to the Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-image: image-url('elemento_dash.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+}
+
+.dashboard-powerbi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 100%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem darkgray;
+}
+
+.dashboard-powerbi iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboard-logo {
+  width: 7.5rem;
+  height: 2rem;
+  background-image: image-url('filterfeed.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.dashboard-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between ;
+  min-height: 4rem;
+  width: 80vw;
+  top: 0;
+}
+
+.dashboard-navbar a {
+  text-decoration: underline;
+  text-transform: lowercase;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.dashboard-footer {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4rem;
+  bottom: 0;
+}

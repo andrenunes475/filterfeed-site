@@ -1,0 +1,39 @@
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-project-diagram"></i>
+      Produtos Cadastrados
+    </div>
+    <%= link_to 'Novo Produto', new_backoffice_service_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th class='w-50'>Nome</th>
+            <th class='w-50'>Descrição</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @services.each do |service| %>
+            <tr>
+              <td><%= service.id %></td>
+              <td><%= service.name %></td>
+              <td><%= service.text %></td>
+              <td align="center"><%= link_to edit_backoffice_service_path(service), class: 'btn btn-sm' do %>
+                <i class="fas fa-lg fa-fw fa-edit"></i>
+              <% end %></td>
+              <td align="center"><%= link_to backoffice_service_path(service), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir o produto?"} do %>
+                <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+              <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

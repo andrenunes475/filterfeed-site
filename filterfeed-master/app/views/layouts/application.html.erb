@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Filterfeed</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <meta name="google-site-verification" content="Q10K97c4Kp8dXAXmb2_Sv9H7nSfH1yGtnqClQwKpoZ0" />
+    <%= favicon_link_tag asset_path('favicon.png'), type: 'image/png' %>
+
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Montserrat:400,700' %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'css/sb-admin.css' %>
+    <%= javascript_include_tag 'js/sb-admin.js' %>
+    <%= javascript_include_tag "dashboard.js" %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+
+  <body class='<%= background_color %>'>
+    <% flash.each do |key, value| %>
+        <% if key == "error" %>
+          <div class="alert alert-error"><%= value %></div>
+        <% elsif key == "notice" %>
+          <div class="alert alert-success"><%= value %></div>
+        <% else %>
+          <div class="alert alert-warning"><%= value %></div>
+        <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

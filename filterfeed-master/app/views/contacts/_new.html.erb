@@ -1,0 +1,38 @@
+<%= form_for contact, url: url, method: method, remote: true, html: {class: 'mbr-form form-with-styler'} do |f| %>
+    <div class="dragArea row">
+        <% if curso %>
+            <div class="col-md-6  form-group" data-for="name">
+                <%= f.text_field(:name, required: true, class: 'form-control input display-7', placeholder: 'Nome') %>
+            </div>
+            <div class="col-md-6  form-group" data-for="phone">
+                <%= f.text_field(:phone, required: true, class: 'form-control input display-7', placeholder: 'Telefone') %>
+            </div>
+            <div data-for="email" class="col-md-12  form-group">
+                <%= f.text_field(:email, required: true, pattern: '[\w\d.]+[@][\w\d]+[.][\w\d]+[.]?[\w\d]*', class: 'form-control input display-7', placeholder: 'Email') %>
+            </div>
+            <div data-for="message" class="col-md-12  form-group">
+                <%= f.text_area(:message, required: true, class: 'form-control input display-7', placeholder: 'Oi, gostaria de me inscrever no curso...') %>
+            </div>
+        <% else %>
+            <div class="col-md-6  form-group" data-for="name">
+                <%= f.text_field(:name, required: true, class: 'form-control input display-7', placeholder: 'Nome/Organização') %>
+            </div>
+            <div class="col-md-6  form-group" data-for="phone">
+                <%= f.text_field(:phone, required: true, class: 'form-control input display-7', placeholder: 'Telefone') %>
+            </div>
+            <div data-for="email" class="col-md-12  form-group">
+                <%= f.text_field(:email, required: true, pattern: '[\w\d.]+[@][\w\d]+[.][\w\d]+[.]?[\w\d]*', class: 'form-control input display-7', placeholder: 'Email') %>
+            </div>
+            <div data-for="message" class="col-md-12  form-group">
+                <%= f.text_area(:message, required: true, class: 'form-control input display-7', placeholder: 'Mensagem') %>
+            </div>
+        <% end %>
+        <div class="col-md-12 input-group-btn mt-2 align-center">
+            <%= f.submit('ENVIAR', id: 'workffs', class: 'btn btn-primary btn-form display-4') %>
+        </div>
+    </div>
+    <div class="hidden">
+        <%= f.label :nickname %>
+        <%= f.text_field :nickname, hint: 'deixe este campo em branco' %>
+    </div>
+<% end %>

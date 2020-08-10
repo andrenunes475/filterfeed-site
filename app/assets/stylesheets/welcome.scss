@@ -1,0 +1,132 @@
+.section-partners {
+    background-image: image-url("Projeto_Site_WHITE_PC_teste_22.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.partners-box {
+    padding: 2em 5em;
+    margin: 3px;
+}
+
+.partners-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    margin-top: 3.5em;
+}
+
+.section-title{
+    font-family: 'Montserrat';
+    color: #5e1cac ;
+    margin-bottom: 1em;
+    margin-top: 1.5em;
+}
+
+.divisoria {
+    margin-top: 2.5rem;
+    background-image: image-url("Projeto_Site_WHITE_PC_teste_21.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: calc(100vw - var(--scrollbar-width));
+    height: calc((100vw - var(--scrollbar-width)) * 0.163020833);
+}
+
+.center-box{
+    display: flex;
+    justify-content: center;
+}
+
+.page-container{
+    margin-left: 3rem;
+    margin-right: 3rem;
+    position: relative;
+    height: 100%;
+}
+
+.page-body{
+    width: calc(100vw - var(--scrollbar-width));
+    height: calc((100vw - var(--scrollbar-width)) * 0.625);
+}
+
+.header-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(100%, 100%, 100%, 0);
+}
+
+.horizontal-list{
+    list-style-type: none;
+    min-height: 1px;
+    width: 100%;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-top: 0.2em;
+
+    li {
+        float: right;
+        font-family: 'Montserrat';
+        font-weight: bolder;
+        color: #6c4fb1;
+        padding: 1em 0.3em;
+    }
+
+    a {
+        text-decoration: none;
+        color: #6c4fb1;
+    }
+
+    .dropdown {
+        display: none;
+    }
+
+    .section-link {
+        font-size: 1.4em;
+        margin-right: 0.5em;
+
+    }
+
+    .section-link:hover {
+        color: #4b377b;
+    }
+}
+
+
+.logo-redimension{
+    height: 2.5em;
+    margin-left: 1em;
+    margin-top: -0.3em;
+}
+
+.greetings-textbox{
+    width: calc(40vw   - var(--scrollbar-width));
+    margin-left: calc(7vw - var(--scrollbar-width));
+    padding-top: calc(22vw - var(--scrollbar-width));
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2em;
+    line-height: 115%;
+    color: #5e1cac;
+
+}
+
+#page0{
+    background-image: image-url("home.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-bottom: 1rem;
+}
+
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -1.5em;
+    visibility: hidden;
+}

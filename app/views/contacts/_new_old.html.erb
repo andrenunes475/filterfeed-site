@@ -1,0 +1,82 @@
+<a class="anchor" id="contato"></a>
+<div class="section-contact">
+    <div>
+        <h1> Contato </h1>
+        <hr>
+    </div>
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="address">
+                <p class="text-address"><%= @address.address1 %></p>
+                <p class="text-address"><%= @address.address2 %></p>
+                <p class="bold-address">Todas as atividades na nuvem.</p>
+            </div>
+            <div class="phone-email">
+                <div class="phone-icon">
+                    <i class="fas fa-phone fa-flip-horizontal"></i>
+                </div>
+                <div class="vertical-line"></div>
+                <div>
+                    <b>Equipe Filterfeed</b><br>
+                    <% if @contact_info.present? %>
+                        <span class="email"><%= @contact_info.email %></span><br>
+                        <span class="phone"><%= @contact_info.phone %><span>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <div class="form-container">
+            <%= form_for contact, url: url, method: method do |f| %>
+                <div class="d-flex justify-content-between">
+                    <div class="form-name">
+                        <%= f.label :nome, class: "label" %>
+                        <%= f.text_field :name, required: true, class: "field" %>
+                    </div>
+
+                    <div class="form-email">
+                        <%= f.label :email, class: "label"  %>
+                        <%= f.email_field :email, required: true, class: "field" %>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <div class="form-phone">
+                        <%= f.label :telefone, class: "label" %>
+                        <%= f.telephone_field :phone, required: true, class: "field" %>
+                    </div>
+
+                    <div class="form-organization">
+                        <%= f.label :organization, 'Organização', class: "label" %>
+                        <%= f.text_field :organization, required: true, class: "field" %>
+                    </div>
+                </div>
+
+
+                <div class="form-message">
+                    <%= f.label :mensagem, class: "label" %>
+                    <%= f.text_area :message, required: true, class: "message-field field" %>
+                    <div id="plans-field" class="plans-field">
+                        <% if plans.present? %>
+                            <% plans.each do |plan|  %>
+                                <%= f.check_box :plans, {multiple: true, class: "plan-checkbox", id: plan.content}, plan.content, false %>
+                                <label for="<%= plan.content %>" class="plan-label"><%= plan.content %><span>×</span></label>
+                            <% end %>
+                        <% end %>
+                    </div>
+                    <%= f.submit "Enviar", class: "send-button" %>
+                </div>
+
+                <div class="hidden">
+                    <%= f.label :nickname %>
+                    <%= f.text_field :nickname, hint: 'deixe este campo em branco' %>
+                </div>
+
+
+
+            <% end %>
+        </div>
+    </div>
+
+    <p class="copyright">&copy; 2019 Filterfeed Inc. All Rights Reserved.</p>
+
+</div>

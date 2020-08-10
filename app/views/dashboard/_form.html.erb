@@ -1,0 +1,25 @@
+<main class="dashboard">
+  <nav class="dashboard-navbar">
+    <%= link_to '', root_path, class: 'dashboard-logo' %>
+    <%= link_to 'dashboard' %>
+  </nav>
+  <div class="dashboard-powerbi">
+    <%= form_for :dashboard, url: dashboard_auth_path, html: {class: 'security'}, method: :post do |f| %>
+      <%= f.hidden_field(:options, value: options) %>
+      <p class='security-title'>Antes de prosseguir, precisamos<br />verificar sua identidade.</p>
+      <p class='security-subtitle'>Selecione sua insígnia:</p>
+      <table>
+        <% options.each_slice(3) do |c1, c2, c3| %>
+          <tr>
+            <td class='security-td'><%= f.submit(c1, name: 'key', value: c1, class: 'security-button') %></td>
+            <td class='security-td'><%= f.submit(c2, name: 'key', value: c2, class: 'security-button') %></td>
+            <td class='security-td'><%= f.submit(c3, name: 'key', value: c3, class: 'security-button') %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+  <footer class="dashboard-footer">
+    &copy; 2019 Filterfeed Inc. All Rights Reserved
+  </footer>
+</main>

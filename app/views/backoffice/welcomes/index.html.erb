@@ -1,0 +1,44 @@
+<!-- DataTables Example -->
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fa fa-fw fa-align-justify"></i>
+      Texto (Produtos) Cadastrados
+    </div>
+    <%= link_to 'Novo Texto (Produtos)', new_backoffice_welcome_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th class='w-75'>Texto</th>
+            <th>Exibir</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @welcomes.each do |welcome| %>
+            <tr>
+              <td><%= welcome.id %></td>
+              <td><%= welcome.is_active %></td>
+              <td><%= welcome.content %></td>
+              <td align="center"><%= link_to backoffice_welcome_activate_path(welcome), class: 'btn btn-sm', method: :post do %>
+                  <i class="fa-lg fa-fw <%= welcome.active ? 'fas fa-check-' : 'far fa-' %>square"></i>
+                <% end %></td>
+              <td align="center"><%= link_to edit_backoffice_welcome_path(welcome), class: 'btn btn-sm' do %>
+                <i class="fas fa-lg fa-fw fa-edit"></i>
+              <% end %></td>
+              <td align="center"><%= link_to backoffice_welcome_path(welcome), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir texto de boas-vindas?"} do %>
+                <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+              <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

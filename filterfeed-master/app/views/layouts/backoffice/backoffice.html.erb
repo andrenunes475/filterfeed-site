@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+    <title>Filterfeed</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= favicon_link_tag asset_path('favicon.png') %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag 'css/sb-admin.css' %>
+    <%= javascript_include_tag 'js/sb-admin.js' %>
+  </head>
+  <body id='page-top' class='backoffice'>
+    <nav class='navbar navbar-expand navbar-dark bg-color static-top'>
+      <%= link_to(root_path, class: 'd-flex align-items-center') do %>
+        <div class='backoffice-logo'></div>
+      <% end %>
+
+      <!-- Navbar -->
+      <ul class='navbar-nav ml-auto md-0'>
+        <li class='nav-item active'>
+          <%= link_to(destroy_user_session_path(), class: 'nav-link', method: :delete) do %>
+            <i class='fas fa-fw fa-sign-out-alt'></i>
+            <span>Logout<span>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+
+    <div id='wrapper'>
+      <%= render 'layouts/backoffice/sidebar' %>
+
+      <div class='px-3 pt-3 w-100' style='height: 100%'>
+        <% flash.each do |key, value| %>
+            <% if key == "error" %>
+              <div class="alert alert-error"><%= value %></div>
+            <% elsif key == "notice" %>
+              <div class="alert alert-success"><%= value %></div>
+            <% else %>
+              <div class="alert alert-warning"><%= value %></div>
+            <% end %>
+        <% end %>
+        <%= render 'layouts/backoffice/breadcumbs' %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

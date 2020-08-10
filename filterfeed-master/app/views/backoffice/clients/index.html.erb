@@ -1,0 +1,44 @@
+<!-- DataTables Example -->
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-hand-holding-usd "></i>
+      Clientes Cadastrados
+    </div>
+    <%= link_to 'Novo Cliente', new_backoffice_client_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Bloqueado</th>
+            <th class='w-50'>Nome</th>
+            <th class='w-25'>CNPJ</th>
+            <th class='w-25'>Telefone</th>
+            <th>Bloquear</th>
+            <th>Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @clients.each do |client| %>
+            <tr>
+              <td><%= client.id %></td>
+              <td><%= client.blocked ? 'Sim' : 'Não' %></td>
+              <td><%= client.name %></td>
+              <td><%= client.cnpj %></td>
+              <td><%= client.phone %></td>
+              <td align="center"><%= link_to backoffice_client_block_path(client), class: 'btn btn-sm', method: :post do %>
+                <i class="fas fa-lg fa-fw fa-lock<%= client.blocked ? '-open' : '' %>"></i>
+              <% end %></td>
+              <td align="center"><%= link_to edit_backoffice_client_path(client), class: 'btn btn-sm' do %>
+                <i class="fas fa-lg fa-fw fa-edit"></i>
+              <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

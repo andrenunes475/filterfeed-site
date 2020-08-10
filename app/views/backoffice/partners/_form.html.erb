@@ -1,0 +1,25 @@
+<%= form_for @partner, url: url, method: method, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'} do |f| %>
+  <h3><%= text %></h3>
+  <div class='w-100'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:name, id: 'name', class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-at"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:name, class: 'form-control', required: true, placeholder: 'Nome', 'aria-describedby': 'name') %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:avatar, id: 'avatar', class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-file-image"></i>
+        <% end %>
+      </div>
+      <%= f.file_field(:avatar, class: 'form-control', required: true, 'aria-describedby': 'avatar') %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit('Salvar', class: 'btn btn-success') %>
+    <%= link_to 'Voltar', backoffice_partners_path, class: 'btn btn-info' %>
+  </div>
+<% end %>

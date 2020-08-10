@@ -1,0 +1,21 @@
+<%= form_for @welcome, url: url, method: method, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'} do |f| %>
+  <h3><%= text %></h3>
+  <div class='w-100'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:content, id: 'content', class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-mitten"></i>
+        <% end %>
+      </div>
+      <%= f.text_area(:content, class: 'form-control', required: true, placeholder: 'Conteúdo', 'aria-describedby': 'email') %>
+    </div>
+    <div class="form-check">
+      <%= f.check_box(:active, class: 'form-check-input') %>
+      <%= f.label(:active, class: 'form-check-label') %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit('Salvar', class: 'btn btn-success') %>
+    <%= link_to 'Voltar', backoffice_welcomes_path, class: 'btn btn-info' %>
+  </div>
+<% end %>

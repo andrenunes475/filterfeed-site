@@ -1,0 +1,5 @@
+<% if @blocked %>
+  <%= render partial: 'blocked' %>
+<% else %>
+  <%= render partial: 'form', locals: {options: @options} %>
+<% end %>

@@ -1,0 +1,43 @@
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-handshake "></i>
+      Parceiros Cadastrados
+    </div>
+    <%= link_to 'Novo Parceiro', new_backoffice_partner_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th class='w-75'>Nome</th>
+            <th>Exibir</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @partners.each do |partner| %>
+            <tr>
+              <td><%= partner.id %></td>
+              <td><%= partner.is_active %></td>
+              <td><%= partner.name %></td>
+              <td align="center"><%= link_to backoffice_partner_activate_path(partner), class: 'btn btn-sm', method: :post do %>
+                  <i class="fa-lg fa-fw <%= partner.active ? 'fas fa-check-' : 'far fa-' %>square"></i>
+                <% end %></td>
+              <td align="center"><%= link_to edit_backoffice_partner_path(partner), class: 'btn btn-sm' do %>
+                <i class="fas fa-lg fa-fw fa-edit"></i>
+              <% end %></td>
+              <td align="center"><%= link_to backoffice_partner_path(partner), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir o logotipo do parceiro?"} do %>
+                <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+              <% end %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+// Place all the styles related to the backoffice/Backoffice controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bg-color {
+  background-image: linear-gradient(to right top, #3a116a, #6a20c2);
+}
+
+.backoffice-logo {
+  width: 7.5rem;
+  height: 2rem;
+  background-image: image-url('filterfeed_white.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.backoffice {
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+.backoffice-font .navbar-brand {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+a.btn-sm:hover {
+  color: #521896;
+}

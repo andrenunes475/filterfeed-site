@@ -1,0 +1,45 @@
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-phone "></i>
+      Contato Cadastrado
+    </div>
+    <%= link_to "Novo Contato", new_backoffice_contact_info_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th class='w-50'>Email</th>
+            <th class='w-25'>Telefone</th>
+            <th>Exibir</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @contact_infos.each do |info| %>
+          <tr>
+            <td><%= info.id %></td>
+            <td><%= info.active ? 'Ativado' : 'Desativado' %></td>
+            <td><%= info.email %></td>
+            <td><%= info.phone %></td>
+            <td align="center"><%= link_to backoffice_contact_info_activate_path(info), class: 'btn btn-sm', method: :post do %>
+              <i class="fa-lg fa-fw <%= info.active ? 'fas fa-check-' : 'far fa-' %>square"></i>
+            <% end %></td>
+            <td align="center"><%= link_to edit_backoffice_contact_info_path(info), class: 'btn btn-sm' do %>
+              <i class="fas fa-lg fa-fw fa-edit"></i>
+            <% end %></td>
+            <td align="center"><%= link_to backoffice_contact_info_path(info), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir a informação de contato?"} do %>
+              <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+            <% end %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

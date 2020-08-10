@@ -1,0 +1,29 @@
+<%= form_for @address, url: url, method: method, html: {class: 'w-50 mx-auto d-flex align-items-center flex-column'} do |f| %>
+  <h3><%= text %></h3>
+  <div class='w-100'>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:address1, "Estado", class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-map-marked-alt"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:address1, class: 'form-control', required: true, placeholder: 'Estado') %>
+    </div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <%= f.label(:address2, "Endereço", class: 'input-group-text') do %>
+          <i class="fas fa-fw fa-map-marked"></i>
+        <% end %>
+      </div>
+      <%= f.text_field(:address2, required: true, class: 'form-control', placeholder: 'Endereço') %>
+    </div>
+    <div class="form-check">
+      <%= f.check_box(:active, class: 'form-check-input') %>
+      <%= f.label(:active, "Ativar?", class: 'form-check-label') %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit('Salvar', class: 'btn btn-success') %>
+    <%= link_to 'Voltar', backoffice_addresses_path, class: 'btn btn-info' %>
+  </div>
+<% end %>

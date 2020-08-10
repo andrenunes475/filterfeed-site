@@ -1,0 +1,45 @@
+<div class="card mb-3">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    <div>
+      <i class="fas fa-fw fa-map-marked-alt "></i>
+      Endereços Cadastradas
+    </div>
+    <%= link_to "Novo Endereço", new_backoffice_address_path, class: 'btn btn-success' %>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th class='w-50'>Estado</th>
+            <th class='w-50'>Endereço</th>
+            <th>Exibir</th>
+            <th>Editar</th>
+            <th>Excluir</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @addresses.each do |address| %>
+          <tr>
+            <td><%= address.id %></td>
+            <td><%= address.active ? 'Ativado' : 'Desativado' %></td>
+            <td><%= address.address1 %></td>
+            <td><%= address.address2 %></td>
+            <td align="center"><%= link_to backoffice_address_activate_path(address), class: 'btn btn-sm', method: :post do %>
+              <i class="fa-lg fa-fw <%= address.active ? 'fas fa-check-' : 'far fa-' %>square"></i>
+            <% end %></td>
+            <td align="center"><%= link_to edit_backoffice_address_path(address), class: 'btn btn-sm' do %>
+              <i class="fas fa-lg fa-fw fa-edit"></i>
+            <% end %></td>
+            <td align="center"><%= link_to backoffice_address_path(address), method: 'delete', class: 'btn btn-sm', data: {confirm: "Excluir a informação de contato?"} do %>
+              <i class="fas fa-lg fa-fw fa-trash-alt"></i>
+            <% end %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

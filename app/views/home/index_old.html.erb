@@ -1,0 +1,5 @@
+<%= render partial: "welcome" %>
+<%= render partial: "graph" %>
+<%= render partial: "partners" %>
+<%= render partial: "home/plans", locals: {plans: @plans} %>
+<%= render partial: "contacts/new", locals: {contact: @contact, url: contacts_path, method: :post, plans: @plans} %>
